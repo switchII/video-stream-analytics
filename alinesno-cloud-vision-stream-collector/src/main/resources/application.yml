@@ -1,0 +1,14 @@
+camera:
+  id: vid-01
+  url: ../sample-video/sample.mp4
+
+kafka:
+  acks: all
+  batch-size: 20971520 
+  bootstrap-servers:
+  - localhost:9092
+  compression-type: gzip
+  linger-ms: 5
+  max-request-size: 2097152
+  retries: 1
+  topic: video-stream-event

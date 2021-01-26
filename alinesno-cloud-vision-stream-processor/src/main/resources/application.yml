@@ -1,0 +1,16 @@
+kafka:
+  bootstrap:
+    servers: localhost:9092
+  max:
+    partition:
+      fetch:
+        bytes: 2097152
+    poll:
+      records: 500
+  topic: video-stream-event
+processed:
+  output:
+    dir: /tmp/processed-data/
+spark:
+  master:
+    url: local[*]

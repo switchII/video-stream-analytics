@@ -1,15 +1,25 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.iot.video.app</groupId>
-	<artifactId>video-stream-analytics</artifactId>
+	
+	<groupId>com.alinesno.cloud.vision.stream</groupId>
+	<artifactId>alinesno-cloud-vision-stream</artifactId>
+	
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<name>Video Stream Analytics</name>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.2</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
 	<modules>
-		<module>video-stream-processor</module>
-		<module>video-stream-collector</module>
+		<module>alinesno-cloud-vision-stream-processor</module>
+		<module>alinesno-cloud-vision-stream-collector</module>
 	</modules>
-	
+
 </project>
