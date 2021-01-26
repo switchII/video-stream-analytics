@@ -1,16 +1,17 @@
-kafka:
-  bootstrap:
-    servers: localhost:9092
-  max:
-    partition:
-      fetch:
-        bytes: 2097152
-    poll:
-      records: 500
-  topic: video-stream-event
-processed:
-  output:
-    dir: /tmp/processed-data/
-spark:
-  master:
-    url: local[*]
+spring:
+  application:
+    name: alinesno-cloud-vision-stream-processor
+  kafka:
+    listener:
+      concurrency: 50
+    consumer:
+      group-id: 1
+      auto-offset-reset: earliest
+      fetch-min-size: 2097152
+      max-poll-records: 500
+    bootstrap-servers:
+    - localhost:9092
+
+logging:
+  level:
+    com.alinesno.cloud.vision.stream.processor: debug

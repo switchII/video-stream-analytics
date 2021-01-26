@@ -3,6 +3,7 @@ package com.alinesno.cloud.vision.stream.controller.properties;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * 视频流
@@ -10,6 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author LuoAnDong
  * @date 2021年1月26日 下午3:39:12
  */
+@Configuration
 @ConfigurationProperties(prefix = "camera")
 public class CameraConfig {
 

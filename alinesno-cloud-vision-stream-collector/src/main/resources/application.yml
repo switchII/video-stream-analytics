@@ -1,14 +1,26 @@
-camera:
-  id: vid-01
-  url: ../sample-video/sample.mp4
+spring:
+  application:
+    name: alinesno-cloud-vision-stream-collector
+  kafka:
+    producer:
+      properties:
+        max.request.size: 2097152
+      retries: 1
+      acks: all
+      batch-size: 20971520
+      compression-type: gzip
+    bootstrap-servers:
+    - localhost:9092
 
-kafka:
-  acks: all
-  batch-size: 20971520 
-  bootstrap-servers:
-  - localhost:9092
-  compression-type: gzip
-  linger-ms: 5
-  max-request-size: 2097152
-  retries: 1
-  topic: video-stream-event
+server:
+  port: 8081
+
+logging:
+  level:
+    com.alinesno.cloud.vision.stream.controller: debug
+
+camera:
+  id:
+  - demo-video
+  urls:
+  - ../sample-video/sample.mp4

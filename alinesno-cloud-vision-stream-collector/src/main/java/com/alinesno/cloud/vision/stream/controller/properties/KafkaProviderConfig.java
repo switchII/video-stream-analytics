@@ -3,32 +3,18 @@ package com.alinesno.cloud.vision.stream.controller.properties;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 /**
-#kafka:
-#  acks: all
-#  batch:
-#    size: 20971520
-#  bootstrap:
-#    servers: localhost:9092
-#  compression:
-#    type: gzip
-#  linger:
-#    ms: 5
-#  max:
-#    request:
-#      size: 2097152
-#  retries: 1
-#  topic: video-stream-event
-
  * @author LuoAnDong
  * @date 2020年12月18日 上午11:12:39
  */
+@Configuration
 @ConfigurationProperties(prefix = "kafka")
 public class KafkaProviderConfig {
 
 	private String acks ; 
-	private Long batchSize ; 
+	private int batchSize ; 
 	private List<String> bootstrapServers ; 
 	private String compressionType ; 
 	private int lingerMs ; 
@@ -41,10 +27,11 @@ public class KafkaProviderConfig {
 	public void setAcks(String acks) {
 		this.acks = acks;
 	}
-	public Long getBatchSize() {
+	
+	public int getBatchSize() {
 		return batchSize;
 	}
-	public void setBatchSize(Long batchSize) {
+	public void setBatchSize(int batchSize) {
 		this.batchSize = batchSize;
 	}
 	public List<String> getBootstrapServers() {
