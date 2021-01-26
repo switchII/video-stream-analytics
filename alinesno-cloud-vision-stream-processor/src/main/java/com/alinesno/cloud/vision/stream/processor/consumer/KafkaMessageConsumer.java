@@ -26,14 +26,13 @@ public class KafkaMessageConsumer {
 	
 		log.debug("message = {}" , topic);
 		
-//        Optional<String> kafkaMassage = Optional.ofNullable(consumerRecord.value());
-//        if (kafkaMassage.isPresent()) {
-//            String o = kafkaMassage.get();
-//            VideoEventData data = gson.fromJson(o, VideoEventData.class) ; 
-//            log.debug("data = {}" , data);
-//        }
-//        log.debug("收到消息 , offset : {} , kafkaMassage.isPresent():{} ", consumerRecord.offset() , kafkaMassage.isPresent()) ; 
-//        log.info("offset: {} 收到消息: key === {} ", consumerRecord.offset(), new String(consumerRecord.value().toString().getBytes(), StandardCharsets.UTF_8));
+        Optional<String> kafkaMassage = Optional.ofNullable(consumerRecord.value());
+        if (kafkaMassage.isPresent()) {
+            String o = kafkaMassage.get();
+            VideoEventData data = gson.fromJson(o, VideoEventData.class) ; 
+            log.debug("data = {}" , data);
+        }
+        log.debug("收到消息 , offset : {} , kafkaMassage.isPresent():{} ", consumerRecord.offset() , kafkaMassage.isPresent()) ; 
     }
 
 }
